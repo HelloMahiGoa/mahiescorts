@@ -1269,7 +1269,6 @@ export default function Home() {
           </dl>
         </div>
       </section>
-      <ContactBanner />
     </>
   );
 }

@@ -3,53 +3,62 @@ import { goaAreas } from "@/data/goaAreas";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50">
-      <div className="mx-auto max-w-7xl px-4 py-10">
-        <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="tel:+918121426651"
-            className="rounded-full bg-rose-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-rose-700"
-          >
-            Call Now
-          </a>
-          <a
-            href="https://wa.me/918121426651"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border-2 border-green-600 bg-white px-6 py-3 text-sm font-semibold text-green-700 transition hover:bg-green-50"
-          >
-            WhatsApp
-          </a>
+    <footer className="border-t border-rose-200/60 bg-gradient-to-b from-rose-50/40 to-zinc-100">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h2 className="font-handwriting text-2xl font-bold text-zinc-900">
+              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+                Mahi Escorts
+              </span>
+            </h2>
+            <div className="mt-2 flex gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+              <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-600">
+              Escorts and call girls in Goa. Discreet booking, in-call or out-call across Panjim, Calangute, Baga and Anjuna.
+            </p>
+          </div>
+
+          {/* Quick links */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              Quick links
+            </h3>
+            <ul className="mt-3 space-y-1.5 text-sm text-zinc-600">
+              <li><Link href="/about" className="hover:text-rose-600 hover:underline">About</Link></li>
+              <li><Link href="/services" className="hover:text-rose-600 hover:underline">Services</Link></li>
+              <li><Link href="/blog" className="hover:text-rose-600 hover:underline">Blog</Link></li>
+              <li><Link href="/contact" className="hover:text-rose-600 hover:underline">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Service areas */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              Service areas
+            </h3>
+            <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-zinc-600 sm:gap-x-6">
+              {goaAreas.map((area) => (
+                <li key={area.slug}>
+                  <Link href={`/areas/${area.slug}`} className="hover:text-rose-600 hover:underline">
+                    {area.name} Escorts
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <p className="mb-6 text-center text-sm text-zinc-600">
-          Escorts in Goa • Call Girls Goa • Goa Call Girls • Premium companionship across Goa
-        </p>
+      </div>
 
-        <div className="mb-6 flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm">
-          <Link href="/about" className="text-rose-600 hover:underline">About</Link>
-          <Link href="/services" className="text-rose-600 hover:underline">Services</Link>
-          <Link href="/blog" className="text-rose-600 hover:underline">Blog</Link>
-          <Link href="/contact" className="text-rose-600 hover:underline">Contact</Link>
-        </div>
-
-        <div className="mb-8">
-          <h3 className="mb-3 text-center text-xs font-semibold uppercase tracking-wider text-zinc-500">
-            Service Areas — Goa
-          </h3>
-          <ul className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
-            {goaAreas.map((area) => (
-              <li key={area.slug}>
-                <Link href={`/areas/${area.slug}`} className="text-rose-600 hover:underline">
-                  {area.name} Escorts
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
+      {/* Copyright bar */}
+      <div className="border-t border-zinc-200 bg-zinc-100/80 py-4">
         <p className="text-center text-xs text-zinc-500">
-          © {new Date().getFullYear()} Mahi Escorts. All Rights Reserved. Goa Escorts & Call Girls.
+          © {new Date().getFullYear()} Mahi Escorts. All rights reserved.
         </p>
       </div>
     </footer>

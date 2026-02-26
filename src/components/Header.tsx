@@ -68,70 +68,69 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-gradient-to-r from-zinc-900 via-rose-950/90 to-zinc-900 shadow-lg shadow-black/20 backdrop-blur-md">
-        {/* Subtle shine overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
-        <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4">
-          {/* Logo — bold & gradient */}
-          <Link href="/" className="group flex shrink-0 items-center gap-3">
-            <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500 to-rose-700 shadow-lg shadow-rose-500/30 ring-2 ring-rose-400/30 transition group-hover:shadow-rose-500/50 group-hover:ring-rose-400/50">
-              <span className="text-lg font-black text-white">M</span>
-            </span>
-            <div>
-              <span className="block text-xl font-bold tracking-tight text-white drop-shadow-sm md:text-2xl">
-                Mahi <span className="bg-gradient-to-r from-rose-300 to-pink-400 bg-clip-text text-transparent">Escorts</span>
+      <header className="sticky top-0 z-50 border-b border-rose-200/60 bg-white/95 shadow-sm backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+          {/* Logo — same as footer */}
+          <Link href="/" className="flex shrink-0 flex-col items-start">
+            <span className="font-handwriting text-xl font-bold text-zinc-900 md:text-2xl">
+              <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+                Mahi Escorts
               </span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-rose-400/90">Goa</span>
+            </span>
+            <div className="mt-1 flex gap-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+              <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-0.5 md:flex">
+          {/* Desktop nav — clean, logo-style accents */}
+          <nav className="hidden items-center gap-1 md:flex">
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className="group relative rounded-lg px-4 py-2.5 text-sm font-medium text-zinc-300 transition hover:text-white"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-600 transition hover:bg-rose-50 hover:text-rose-700"
               >
-                <span className="relative z-10">{label}</span>
-                <span className="absolute inset-0 rounded-lg bg-white/5 opacity-0 transition hover:opacity-100" />
-                <span className="absolute bottom-1.5 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-gradient-to-r from-rose-400 to-pink-400 transition-all duration-300 group-hover:w-3/4" />
+                {label}
               </Link>
             ))}
             <div className="relative ml-1" ref={areasRef}>
               <button
                 type="button"
                 onClick={() => setAreasOpen((o) => !o)}
-                className="relative flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-medium text-zinc-300 transition hover:text-white"
+                className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-zinc-600 transition hover:bg-rose-50 hover:text-rose-700"
                 aria-expanded={areasOpen}
                 aria-haspopup="true"
               >
-                <span className="relative z-10">Areas</span>
-                <span className="absolute inset-0 rounded-lg bg-white/5 opacity-0 transition opacity-200 hover:opacity-100" />
-                <ChevronDown className={`relative z-10 h-4 w-4 transition duration-200 ${areasOpen ? "rotate-180 text-rose-400" : ""}`} />
+                Areas
+                <ChevronDown className={`h-4 w-4 transition duration-200 ${areasOpen ? "rotate-180 text-rose-500" : "text-zinc-400"}`} />
               </button>
               {areasOpen && (
-                <div className="absolute left-0 top-full z-50 mt-2 w-80 overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/95 py-2 shadow-2xl shadow-black/40 backdrop-blur-xl">
-                  <div className="border-b border-white/10 px-4 py-3">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-rose-400/90">Service areas</p>
+                <div className="absolute left-0 top-full z-50 mt-1.5 w-72 overflow-hidden rounded-xl border border-rose-200/80 bg-white py-2 shadow-xl shadow-rose-900/10">
+                  <div className="flex items-center gap-1.5 border-b border-rose-100 px-4 py-2.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Service areas</p>
                   </div>
                   <Link
                     href="/areas"
-                    className="block border-b border-white/10 px-4 py-3 text-sm font-medium text-rose-300 transition hover:bg-white/5 hover:text-rose-200"
+                    className="block border-b border-rose-100 px-4 py-2.5 text-sm font-medium text-rose-600 transition hover:bg-rose-50"
                     onClick={() => setAreasOpen(false)}
                   >
                     View all areas →
                   </Link>
-                  <ul className="max-h-72 overflow-y-auto py-2">
+                  <ul className="max-h-64 overflow-y-auto py-1">
                     {goaAreas.map((area) => (
                       <li key={area.slug}>
                         <Link
                           href={`/areas/${area.slug}`}
-                          className="block px-4 py-2.5 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white"
+                          className="block px-4 py-2 text-sm text-zinc-600 transition hover:bg-rose-50 hover:text-rose-700"
                           onClick={() => setAreasOpen(false)}
                         >
-                          <span className="font-medium">{area.name}</span>
-                          <span className="ml-1.5 text-xs text-zinc-500">{area.description}</span>
+                          {area.name}
+                          <span className="ml-1.5 text-xs text-zinc-400">{area.description}</span>
                         </Link>
                       </li>
                     ))}
@@ -141,23 +140,22 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* CTAs — eye-catching */}
-          <div className="hidden items-center gap-3 md:flex">
+          {/* CTAs — gradient (logo-style) + WhatsApp */}
+          <div className="hidden items-center gap-2 md:flex">
             <a
               href="tel:+918121426651"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-rose-500 to-rose-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-rose-500/30 transition hover:from-rose-400 hover:to-rose-500 hover:shadow-rose-500/40 hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
             >
-              <span className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              <PhoneIcon className="relative h-4 w-4" />
-              <span className="relative">Call Now</span>
+              <PhoneIcon className="h-4 w-4" />
+              Call
             </a>
             <a
               href="https://wa.me/918121426651"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-xl border-2 border-emerald-400/80 bg-emerald-500/10 px-5 py-2.5 text-sm font-semibold text-emerald-300 transition hover:border-emerald-400 hover:bg-emerald-500/20 hover:shadow-lg hover:shadow-emerald-500/20"
+              className="inline-flex items-center gap-2 rounded-lg border-2 border-green-500/80 bg-white px-4 py-2 text-sm font-semibold text-green-700 transition hover:bg-green-50"
             >
-              <WhatsAppIcon className="h-5 w-5" />
+              <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
             </a>
           </div>
@@ -165,7 +163,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="rounded-xl p-2.5 text-zinc-400 transition hover:bg-white/10 hover:text-white md:hidden"
+            className="rounded-lg p-2.5 text-zinc-600 transition hover:bg-rose-50 hover:text-rose-700 md:hidden"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -174,51 +172,66 @@ export default function Header() {
             </svg>
           </button>
         </div>
-        {/* Bottom accent line */}
-        <div className="h-px bg-gradient-to-r from-transparent via-rose-500/50 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-pink-200/80 via-rose-300/80 to-transparent" />
       </header>
 
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm md:hidden"
           aria-hidden
           onClick={() => setMobileOpen(false)}
         />
       )}
       <div
-        className={`fixed top-0 right-0 z-[70] h-full w-full max-w-sm transform bg-gradient-to-b from-zinc-900 to-zinc-950 shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed top-0 right-0 z-[70] h-full w-full max-w-sm transform bg-white shadow-2xl transition-transform duration-300 ease-out md:hidden ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex h-full flex-col border-l border-white/10">
-          <div className="flex items-center justify-between border-b border-white/10 px-5 py-5">
-            <span className="bg-gradient-to-r from-rose-300 to-pink-400 bg-clip-text text-lg font-bold text-transparent">Menu</span>
+        <div className="flex h-full flex-col border-l border-rose-200/60">
+          <div className="flex items-center justify-between border-b border-rose-100 px-5 py-4">
+            <div className="flex items-center gap-2">
+              <span className="font-handwriting text-lg font-bold text-zinc-900">
+                <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+                  Menu
+                </span>
+              </span>
+              <div className="flex gap-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+              </div>
+            </div>
             <button
               type="button"
-              className="rounded-xl p-2 text-zinc-400 transition hover:bg-white/10 hover:text-white"
+              className="rounded-lg p-2 text-zinc-500 transition hover:bg-rose-50 hover:text-rose-700"
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
             >
               <CloseIcon className="h-6 w-6" />
             </button>
           </div>
-          <nav className="flex-1 overflow-y-auto px-4 py-6">
+          <nav className="flex-1 overflow-y-auto px-4 py-5">
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className="block rounded-xl px-4 py-3.5 text-base font-medium text-zinc-300 transition hover:bg-white/5 hover:text-white"
+                className="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-600 transition hover:bg-rose-50 hover:text-rose-700"
                 onClick={() => setMobileOpen(false)}
               >
                 {label}
               </Link>
             ))}
-            <div className="mt-4">
-              <p className="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-rose-400/80">Areas in Goa</p>
+            <div className="mt-5 border-t border-rose-100 pt-4">
+              <p className="flex items-center gap-1.5 px-4 pb-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                <span className="h-1.5 w-1.5 rounded-full bg-pink-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                Areas in Goa
+              </p>
               <Link
                 href="/areas"
-                className="block rounded-xl px-4 py-3 text-base font-medium text-rose-300 transition hover:bg-white/5"
+                className="block rounded-lg px-4 py-2.5 text-sm font-medium text-rose-600 hover:bg-rose-50"
                 onClick={() => setMobileOpen(false)}
               >
                 View all areas
@@ -228,7 +241,7 @@ export default function Header() {
                   <li key={area.slug}>
                     <Link
                       href={`/areas/${area.slug}`}
-                      className="block rounded-xl px-4 py-2.5 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-zinc-200"
+                      className="block rounded-lg px-4 py-2 text-sm text-zinc-600 hover:bg-rose-50 hover:text-rose-700"
                       onClick={() => setMobileOpen(false)}
                     >
                       {area.name}
@@ -238,23 +251,23 @@ export default function Header() {
               </ul>
             </div>
           </nav>
-          <div className="border-t border-white/10 p-4 space-y-3">
+          <div className="border-t border-rose-100 p-4 space-y-2">
             <a
               href="tel:+918121426651"
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-rose-500 to-rose-600 py-4 text-base font-semibold text-white shadow-lg shadow-rose-500/30"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 py-3.5 text-sm font-semibold text-white shadow-md"
               onClick={() => setMobileOpen(false)}
             >
-              <PhoneIcon className="h-5 w-5" />
-              Call Now
+              <PhoneIcon className="h-4 w-4" />
+              Call
             </a>
             <a
               href="https://wa.me/918121426651"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-xl border-2 border-emerald-400/80 bg-emerald-500/10 py-4 text-base font-semibold text-emerald-300"
+              className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-green-500/80 bg-white py-3.5 text-sm font-semibold text-green-700 hover:bg-green-50"
               onClick={() => setMobileOpen(false)}
             >
-              <WhatsAppIcon className="h-5 w-5" />
+              <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
             </a>
           </div>

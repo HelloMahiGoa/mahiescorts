@@ -12,25 +12,18 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Enhanced background with overlay gradient */}
+      {/* Background image — light overlay so image stays visible */}
       <div className="absolute inset-0">
         <Image
           src="/images/goa_escorts.avif"
-          alt="Luxury Goa escorts - premium companionship"
+          alt="Goa escorts - premium companionship in Goa"
           fill
           priority
-          className="object-cover object-center scale-105 transition-transform duration-[10s] hover:scale-110"
+          className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Multi-layer gradient overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-purple-900/80 to-pink-900/90 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(236,72,153,0.3),_transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(168,85,247,0.3),_transparent_50%)]" />
-        {/* Animated particles effect */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000" />
-        </div>
+        {/* Light gradient only on the left for text readability; rest of image stays clear */}
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/75 via-zinc-900/20 to-transparent" />
       </div>
 
       {/* Main Content */}
