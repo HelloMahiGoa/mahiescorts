@@ -17,7 +17,7 @@ export default function AreasPage() {
         {goaAreas.map((area) => (
           <Link
             key={area.slug}
-            href={`/areas/${area.slug}`}
+            href={`/areas/${area.slug}-escorts`}
             className="block rounded-xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:border-rose-200 hover:shadow-md"
           >
             <h2 className="font-semibold text-zinc-800">{area.name} Escorts</h2>

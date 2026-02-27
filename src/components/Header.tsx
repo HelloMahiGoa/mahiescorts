@@ -125,7 +125,7 @@ export default function Header() {
                     {goaAreas.map((area) => (
                       <li key={area.slug}>
                         <Link
-                          href={`/areas/${area.slug}`}
+                          href={`/areas/${area.slug}-escorts`}
                           className="block px-4 py-2 text-sm text-zinc-600 transition hover:bg-rose-50 hover:text-rose-700"
                           onClick={() => setAreasOpen(false)}
                         >
@@ -240,7 +240,7 @@ export default function Header() {
                 {goaAreas.map((area) => (
                   <li key={area.slug}>
                     <Link
-                      href={`/areas/${area.slug}`}
+                      href={`/areas/${area.slug}-escorts`}
                       className="block rounded-lg px-4 py-2 text-sm text-zinc-600 hover:bg-rose-50 hover:text-rose-700"
                       onClick={() => setMobileOpen(false)}
                     >

@@ -44,7 +44,7 @@ export default function Footer() {
             <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-zinc-600 sm:gap-x-6">
               {goaAreas.map((area) => (
                 <li key={area.slug}>
-                  <Link href={`/areas/${area.slug}`} className="hover:text-rose-600 hover:underline">
+                  <Link href={`/areas/${area.slug}-escorts`} className="hover:text-rose-600 hover:underline">
                     {area.name} Escorts
                   </Link>
                 </li>
