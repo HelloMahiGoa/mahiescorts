@@ -26,7 +26,7 @@ const handwriting = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://mahiescortsgoa.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://mahiescorts.in"),
   verification: {
     google: "xQ4B4iGsVRx3Hc6-Jq7wOwKCANBU_9_Z4XG6_uH2X18",
   },
