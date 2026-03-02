@@ -281,7 +281,7 @@ export default function Home() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-3xl bg-white shadow-xl shadow-pink-200/60">
               <Image
-                src="/images/2.avif"
+                src="/images/what-to expect.avif"
                 alt="Goa escort service - what to expect"
                 width={640}
                 height={800}
@@ -367,7 +367,7 @@ export default function Home() {
             </div>
             <div className="overflow-hidden rounded-3xl bg-white shadow-xl shadow-pink-200/60">
               <Image
-                src="/images/1.avif"
+                src="/images/enjoyable.avif"
                 alt="Enjoying Goa with a companion"
                 width={640}
                 height={800}
@@ -413,7 +413,7 @@ export default function Home() {
             </div>
             <div className="relative h-[420px] overflow-hidden rounded-r-3xl border border-zinc-200 bg-zinc-100 lg:h-[480px]">
               <Image
-                src="/images/2.avif"
+                src="/images/areas.avif"
                 alt="Goa areas - Panjim Calangute Baga Anjuna"
                 fill
                 className="object-cover"
@@ -463,7 +463,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-xl border border-zinc-700 bg-zinc-800/50">
               <div className="relative aspect-[3/4]">
                 <Image
-                  src="/images/1.avif"
+                  src="/images/rate.avif"
                   alt="Goa escorts rates and booking"
                   fill
                   className="object-cover opacity-90"
@@ -474,7 +474,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-xl border border-zinc-700 bg-zinc-800/50">
               <div className="relative aspect-[3/4]">
                 <Image
-                  src="/images/2.avif"
+                  src="/images/pay.avif"
                   alt="Call girls Goa payment and duration"
                   fill
                   className="object-cover opacity-90"
@@ -523,7 +523,7 @@ export default function Home() {
               <div className="absolute -inset-2 rounded-2xl bg-amber-100/50" />
               <div className="relative overflow-hidden rounded-2xl border-2 border-amber-200/80 shadow-lg">
                 <Image
-                  src="/images/1.avif"
+                  src="/images/real-pic.avif"
                   alt="Real Goa escorts profiles - no fake photos"
                   width={560}
                   height={640}
@@ -586,7 +586,7 @@ export default function Home() {
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-md">
             <div className="relative aspect-[21/9] sm:aspect-[3/1]">
               <Image
-                src="/images/2.avif"
+                src="/images/message.avif"
                 alt="Message us for Goa escorts - what to send"
                 fill
                 className="object-cover object-center"
@@ -608,7 +608,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
             <div className="relative aspect-[3/4] overflow-hidden rounded-xl lg:col-span-4">
               <Image
-                src="/images/1.avif"
+                src="/images/availablity.avif"
                 alt="Goa escorts available 24/7"
                 fill
                 className="object-cover"
@@ -740,7 +740,7 @@ export default function Home() {
           <div className="mt-10 overflow-hidden rounded-xl border border-slate-200">
             <div className="relative aspect-[2/1]">
               <Image
-                src="/images/2.avif"
+                src="/images/event.avif"
                 alt="Goa escorts for events and occasions"
                 fill
                 className="object-cover"
@@ -790,7 +790,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl border-2 border-amber-200/60 bg-white shadow-md">
               <div className="relative aspect-[4/5]">
                 <Image
-                  src="/images/1.avif"
+                  src="/images/we-dont.avif"
                   alt="Goa escorts - what we don't do"
                   fill
                   className="object-cover"
@@ -867,7 +867,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-b-3xl rounded-l-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/60">
             <div className="relative aspect-[21/10] sm:aspect-[2/1]">
               <Image
-                src="/images/2.avif"
+                src="/images/russian-escorts.avif"
                 alt="Russian escorts in Goa - discreet company"
                 fill
                 className="object-cover object-center"
@@ -928,7 +928,7 @@ export default function Home() {
               <div className="mt-8 flex justify-end">
                 <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-violet-200/80 shadow-xl sm:h-64 sm:w-64">
                   <Image
-                    src="/images/1.avif"
+                    src="/images/profile-pic.avif"
                     alt="Russian escorts Goa - booking and availability"
                     fill
                     className="object-cover"

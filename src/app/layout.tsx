@@ -4,7 +4,6 @@ import { Geist, Geist_Mono, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import AgeGate from "@/components/AgeGate";
 import FloatingButtons from "@/components/FloatingButtons";
 
 const GA_ID = "G-562BFW4CQ9";
@@ -59,7 +58,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${handwriting.variable} min-h-screen antialiased`}
         suppressHydrationWarning
       >
-        <AgeGate />
         <Header />
         <main className="min-h-screen" id="main-content" aria-label="Goa escorts and call girls – service information, profiles and booking">
           {children}
