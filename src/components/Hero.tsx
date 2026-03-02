@@ -15,7 +15,7 @@ export default function Hero({
       {/* Background image — light overlay so image stays visible */}
       <div className="absolute inset-0">
         <Image
-          src="/images/goa_escorts.avif"
+          src="/images/hero.avif"
           alt="Goa escorts - premium companionship in Goa"
           fill
           priority
