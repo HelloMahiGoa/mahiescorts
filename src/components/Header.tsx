@@ -143,14 +143,14 @@ export default function Header() {
           {/* CTAs — gradient (logo-style) + WhatsApp */}
           <div className="hidden items-center gap-2 md:flex">
             <a
-              href="tel:+918121426651"
+              href="tel:+910000000000"
               className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
             >
               <PhoneIcon className="h-4 w-4" />
               Call
             </a>
             <a
-              href="https://wa.me/918121426651"
+              href="https://wa.me/0000000000"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-green-500/80 bg-white px-4 py-2 text-sm font-semibold text-green-700 transition hover:bg-green-50"
@@ -253,7 +253,7 @@ export default function Header() {
           </nav>
           <div className="border-t border-rose-100 p-4 space-y-2">
             <a
-              href="tel:+918121426651"
+              href="tel:+910000000000"
               className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 py-3.5 text-sm font-semibold text-white shadow-md"
               onClick={() => setMobileOpen(false)}
             >
@@ -261,7 +261,7 @@ export default function Header() {
               Call
             </a>
             <a
-              href="https://wa.me/918121426651"
+              href="https://wa.me/0000000000"
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-green-500/80 bg-white py-3.5 text-sm font-semibold text-green-700 hover:bg-green-50"

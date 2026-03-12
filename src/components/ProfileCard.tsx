@@ -7,7 +7,7 @@ interface ProfileCardProps {
   variant?: "default" | "browse" | "featured" | "compact";
 }
 
-const WHATSAPP = "918121426651";
+const WHATSAPP = "0000000000";
 
 export default function ProfileCard({ profile, variant = "default" }: ProfileCardProps) {
   if (variant === "browse") {

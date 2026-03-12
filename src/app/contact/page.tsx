@@ -7,9 +7,9 @@ export const metadata: Metadata = {
     "Contact Mahi Escorts — Call or WhatsApp for Goa escorts and call girls. Discreet booking across Panjim, Calangute, Baga, Anjuna. We reply through the day.",
 };
 
-const phoneNumber = "+918121426651";
-const phoneDisplay = "+91 81214 26651";
-const whatsappUrl = "https://wa.me/918121426651";
+const phoneNumber = "+910000000000";
+const phoneDisplay = "0000000000";
+const whatsappUrl = "https://wa.me/0000000000";
 
 export default function ContactPage() {
   return (

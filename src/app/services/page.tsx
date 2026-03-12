@@ -254,13 +254,13 @@ export default function ServicesPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="tel:+918121426651"
+              href="tel:+910000000000"
               className="rounded-lg bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
             >
               Call Now
             </a>
             <a
-              href="https://wa.me/918121426651"
+              href="https://wa.me/0000000000"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg border-2 border-green-600 bg-white px-6 py-3 text-sm font-semibold text-green-700 transition hover:bg-green-50"
