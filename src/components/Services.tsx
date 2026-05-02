@@ -1,23 +1,5 @@
 import { MapPin, Home, Clock } from "lucide-react";
-
-const mainServices = [
-  {
-    icon: Clock,
-    title: "24/7 Availability",
-    desc: "Book anytime. We're available round the clock for Goa escorts and call girls service.",
-    tag: "Always open",
-  },
-  {
-    icon: MapPin,
-    title: "In-Call",
-    desc: "Visit our discreet locations across Goa. Comfortable, private settings for your convenience.",
-  },
-  {
-    icon: Home,
-    title: "Out-Call",
-    desc: "We come to you — your hotel, residence or apartment in Panjim, Calangute, Baga, Anjuna and across Goa.",
-  },
-];
+import { HOME_SERVICES_BAND, HOME_SERVICES_MAIN_CARDS } from "@/data/areaPageCopy/homeDefaults";
 
 const intimateServices = [
   "Blowjob",
@@ -48,19 +30,44 @@ const intimateServices = [
   "Tantric Massage",
 ];
 
-export default function Services() {
+export type ServicesCopyProps = {
+  bandEyebrow?: string;
+  bandTitle?: string;
+  intimateGridTitle?: string;
+  /** Three cards in order: featured left, then two stacked right (same icons as home). */
+  mainCards?: Array<{ title: string; desc: string; tag?: string }>;
+};
+
+export default function Services({
+  bandEyebrow,
+  bandTitle,
+  intimateGridTitle,
+  mainCards,
+}: ServicesCopyProps = {}) {
+  const icons = [Clock, MapPin, Home] as const;
+  const source = mainCards ?? [...HOME_SERVICES_MAIN_CARDS];
+  const mainServices = source.map((card, i) => ({
+    ...card,
+    icon: icons[i],
+  }));
+
   const [featured, ...otherMainServices] = mainServices;
   const FeaturedIcon = featured.icon;
+
+  const eyebrow = bandEyebrow ?? HOME_SERVICES_BAND.eyebrow;
+  const title = bandTitle ?? HOME_SERVICES_BAND.title;
+  const gridTitle = intimateGridTitle ?? HOME_SERVICES_BAND.intimateGridTitle;
+
   return (
     <section className="border-t border-zinc-200 bg-white py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-pink-500">
-            What we offer
+            {eyebrow}
           </span>
           <h2 className="font-handwriting mt-1 text-3xl font-bold leading-snug text-zinc-900 sm:text-4xl">
             <span className="bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
-              Escorts Service in Goa — In-Call & Out-Call
+              {title}
             </span>
           </h2>
           <div className="mx-auto mt-4 flex justify-center gap-1.5">
@@ -70,16 +77,13 @@ export default function Services() {
           </div>
         </div>
         <div className="mt-12 grid gap-6 lg:grid-cols-12 lg:gap-8">
-          {/* Featured: 24/7 — larger left card */}
           <div className="lg:col-span-5">
             <div className="flex h-full flex-col rounded-2xl border-2 border-rose-200/80 bg-gradient-to-br from-rose-50/60 to-white p-8 shadow-lg shadow-rose-100">
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-rose-500 text-white shadow-md">
                 <FeaturedIcon className="h-7 w-7" />
               </div>
               <h3 className="mt-6 text-xl font-bold text-zinc-900">{featured.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-600">
-                {featured.desc}
-              </p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-600">{featured.desc}</p>
               {"tag" in featured && featured.tag && (
                 <span className="mt-6 inline-block text-xs font-semibold uppercase tracking-wider text-rose-500">
                   {featured.tag}
@@ -87,7 +91,6 @@ export default function Services() {
               )}
             </div>
           </div>
-          {/* Right: In-Call + Out-Call stacked */}
           <div className="flex flex-col gap-6 lg:col-span-7">
             {otherMainServices.map((item) => {
               const Icon = item.icon;
@@ -108,11 +111,8 @@ export default function Services() {
             })}
           </div>
         </div>
-        {/* Intimate services grid */}
         <div className="mt-14">
-          <h3 className="text-center text-lg font-semibold text-zinc-800">
-            Services available with our Goa escorts
-          </h3>
+          <h3 className="text-center text-lg font-semibold text-zinc-800">{gridTitle}</h3>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {intimateServices.map((name) => (
               <span

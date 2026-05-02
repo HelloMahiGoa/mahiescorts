@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getPostBySlug } from "@/data/blog";
+import MarketingSubpageShell from "@/components/site/MarketingSubpageShell";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -29,7 +30,6 @@ function formatDate(dateStr: string) {
   });
 }
 
-// Placeholder content per slug — in a real app this could be MDX or CMS
 const postContent: Record<string, string> = {
   "best-areas-for-escorts-in-goa": `
     Goa is known for its beaches, nightlife and relaxed vibe. Some of the most popular areas for visitors — and where we offer reliable escort service — include Panjim (the capital, with a charming Latin Quarter), Calangute and Baga (beach hubs with clubs and shacks), Anjuna (flea market and hippie culture), Candolim (quieter beach), and Vagator (cliffs and sunset points). South Goa areas like Margao, Colva and Benaulim offer a more laid-back feel. We cover all these areas with in-call and out-call service so you can choose what suits your stay.
@@ -53,21 +53,34 @@ export default async function BlogPostPage({ params }: PageProps) {
   const content = postContent[post.slug]?.trim() ?? "Content coming soon.";
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-16">
-      <Link href="/blog" className="mb-6 inline-block text-sm text-rose-600 hover:underline">
-        ← Back to Blog
-      </Link>
-      <article>
-        <time dateTime={post.date} className="text-sm text-zinc-500">
-          {formatDate(post.date)} · {post.author}
-        </time>
-        <h1 className="mt-2 text-3xl font-bold text-zinc-800">{post.title}</h1>
-        <div className="mt-8 space-y-4 text-zinc-600">
-          {content.split(/\n\n+/).map((para, i) => (
-            <p key={i}>{para.trim()}</p>
-          ))}
+    <MarketingSubpageShell
+      heroBadge="Blog"
+      heroTitle={post.title}
+      heroSubtitle={post.excerpt}
+      heroImageAlt={post.title}
+      introBand={{
+        eyebrow: "Published",
+        title: formatDate(post.date),
+        lead: `By ${post.author}`,
+      }}
+    >
+      <section className="bg-[#fff5f7] py-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-rose-600 transition hover:text-rose-700"
+          >
+            <span aria-hidden>←</span> Back to blog
+          </Link>
+          <article className="mt-8 overflow-hidden rounded-3xl border border-white/60 bg-white p-8 shadow-xl shadow-pink-200/50 sm:p-10">
+            <div className="space-y-5 text-sm leading-relaxed text-zinc-700 sm:text-base">
+              {content.split(/\n\n+/).map((para, i) => (
+                <p key={i}>{para.trim()}</p>
+              ))}
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
+      </section>
+    </MarketingSubpageShell>
   );
 }

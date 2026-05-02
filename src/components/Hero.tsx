@@ -1,14 +1,21 @@
 import Image from "next/image";
 import { Phone, MessageCircle, Sparkles, Star } from "lucide-react";
+import HeroLastUpdated from "@/components/HeroLastUpdated";
 
 interface HeroProps {
   title?: string;
   subtitle?: string;
+  /** Small pill above the H1; defaults to Goa-wide line when omitted. */
+  badge?: string;
+  /** Background hero image alt; important for area SEO when set. */
+  imageAlt?: string;
 }
 
 export default function Hero({
   title,
   subtitle = "Escorts and call girls across Goa — Panjim, Calangute, Baga, Anjuna and nearby. Discreet booking, in-call or out-call. We keep it straightforward.",
+  badge = "Goa Escorts Service",
+  imageAlt = "Goa escorts - premium companionship in Goa",
 }: HeroProps) {
   return (
     <section className="relative min-h-screen overflow-hidden">
@@ -16,7 +23,7 @@ export default function Hero({
       <div className="absolute inset-0">
         <Image
           src="/images/hero.avif"
-          alt="Goa escorts - premium companionship in Goa"
+          alt={imageAlt}
           fill
           priority
           className="object-cover object-center"
@@ -29,121 +36,94 @@ export default function Hero({
       {/* Main Content */}
       <div className="relative z-10 flex min-h-screen items-center">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <div className="space-y-8">
-              {/* Premium badge with sparkle */}
-              <div className="inline-flex items-center gap-2 backdrop-blur-xl bg-gradient-to-r from-amber-500/20 to-pink-500/20 rounded-full pl-1 pr-6 py-1 border border-amber-500/30 shadow-[0_0_30px_rgba(245,158,11,0.3)]">
-                <div className="bg-gradient-to-r from-amber-500 to-pink-500 rounded-full p-1.5">
-                  <Sparkles className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-sm font-medium text-white/90 tracking-wide">
-                  Goa Escorts & Call Girls
-                </span>
+          <div className="max-w-3xl space-y-8">
+            {/* Premium badge with sparkle */}
+            <div className="inline-flex items-center gap-2 backdrop-blur-xl bg-gradient-to-r from-amber-500/20 to-pink-500/20 rounded-full pl-1 pr-6 py-1 border border-amber-500/30 shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+              <div className="bg-gradient-to-r from-amber-500 to-pink-500 rounded-full p-1.5">
+                <Sparkles className="w-4 h-4 text-white" />
               </div>
+              <span className="text-sm font-medium text-white/90 tracking-wide">{badge}</span>
+            </div>
 
-              {/* Main Heading */}
-              <div className="space-y-4">
-                <h1 className="font-handwriting text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-                  {title ? (
+            {/* Main Heading */}
+            <div className="space-y-4">
+              <h1 className="font-handwriting text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+                {title ? (
+                  <span className="block bg-gradient-to-r from-amber-200 via-pink-200 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(236,72,153,0.5)]">
+                    {title}
+                  </span>
+                ) : (
+                  <>
                     <span className="block bg-gradient-to-r from-amber-200 via-pink-200 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(236,72,153,0.5)]">
-                      {title}
+                      Goa Escorts
                     </span>
-                  ) : (
-                    <>
-                      <span className="block bg-gradient-to-r from-amber-200 via-pink-200 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(236,72,153,0.5)]">
-                        Goa Escorts
-                      </span>
-                      <span className="block text-4xl md:text-5xl lg:text-6xl mt-2 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent">
-                        & Call Girls
-                      </span>
-                    </>
-                  )}
-                </h1>
+                    <span className="block text-4xl md:text-5xl lg:text-6xl mt-2 bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent">
+                      & Call Girls
+                    </span>
+                  </>
+                )}
+              </h1>
 
-                {/* Decorative line */}
-                <div className="flex items-center gap-3">
-                  <div className="h-[2px] w-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <div className="h-[2px] w-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
+              {/* Decorative line */}
+              <div className="flex items-center gap-3">
+                <div className="h-[2px] w-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full" />
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
                 </div>
-
-                {/* Description with glass morphism */}
-                <p className="max-w-xl text-lg md:text-xl text-white/90 leading-relaxed backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 shadow-2xl">
-                  {subtitle}
-                </p>
+                <div className="h-[2px] w-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
               </div>
 
-              {/* CTA Buttons with enhanced styling */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="tel:+910000000000"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden shadow-2xl shadow-rose-500/30 hover:shadow-rose-500/50 transition-all duration-300 hover:scale-105"
-                >
-                  {/* Animated background effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-rose-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Phone className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
-                  <span className="relative z-10">Instant Call</span>
-                  <span className="relative z-10 text-xs bg-white/20 px-2 py-1 rounded-full">Free</span>
-                </a>
+              {/* Description with glass morphism */}
+              <p className="max-w-xl text-lg md:text-xl text-white/90 leading-relaxed backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 shadow-2xl">
+                {subtitle}
+              </p>
+            </div>
 
-                <a
-                  href="https://wa.me/0000000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <MessageCircle className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
-                  <span className="relative z-10">WhatsApp</span>
-                  <span className="relative z-10 text-xs bg-white/20 px-2 py-1 rounded-full">24/7</span>
-                </a>
-              </div>
+            {/* CTA Buttons with enhanced styling */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="tel:+910000000000"
+                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden shadow-2xl shadow-rose-500/30 hover:shadow-rose-500/50 transition-all duration-300 hover:scale-105"
+              >
+                {/* Animated background effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-rose-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Phone className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
+                <span className="relative z-10">Instant Call</span>
+                <span className="relative z-10 text-xs bg-white/20 px-2 py-1 rounded-full">Free</span>
+              </a>
 
-              {/* Trust indicators */}
-              <div className="flex items-center gap-6 text-sm text-white/70">
+              <a
+                href="https://wa.me/0000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <MessageCircle className="w-5 h-5 relative z-10 group-hover:rotate-12 transition-transform" />
+                <span className="relative z-10">WhatsApp</span>
+                <span className="relative z-10 text-xs bg-white/20 px-2 py-1 rounded-full">24/7</span>
+              </a>
+            </div>
+
+            {/* Trust row + last updated (aligned on sm+) */}
+            <div className="flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-6">
+              <div className="flex flex-wrap items-center gap-6 text-sm text-white/70">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
                   <span>500+ Happy Clients</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+                  <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-pink-400" />
                   <span>Discreet Service</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                  <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-purple-400" />
                   <span>Instant Response</span>
                 </div>
               </div>
-            </div>
-
-            {/* Right Column - Stats/Features Card */}
-            <div className="hidden lg:block">
-              <div className="backdrop-blur-xl bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl transform hover:translate-y-[-8px] transition-all duration-500">
-                <h3 className="text-xl font-semibold text-white mb-6">Why Choose Us</h3>
-                <div className="space-y-4">
-                  {[
-                    "Premium Verified Profiles",
-                    "Discrete & Confidential",
-                    "24/7 Customer Support",
-                    "Wide Selection in Goa",
-                    "Luxury Experience"
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3 group">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-pink-400 to-purple-400" />
-                      </div>
-                      <span className="text-white/80 group-hover:text-white transition-colors">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <HeroLastUpdated />
             </div>
           </div>
         </div>

@@ -1,36 +1,196 @@
 import type { Metadata } from "next";
-import Hero from "@/components/Hero";
-import ProfileGrid from "@/components/ProfileGrid";
-import ContactBanner from "@/components/ContactBanner";
+import HomePageSections from "@/components/site/HomePageSections";
+import { BAGA_FAQ_JSON_LD_ENTITIES, BAGA_MARKETING } from "@/data/areaPageCopy/baga";
 import { goaAreas } from "@/data/goaAreas";
-import { profiles } from "@/data/profiles";
+import {
+  featuredProfileSeeds,
+  profileSeeds,
+  russianProfileSeeds,
+  type Profile,
+} from "@/data/profiles";
+import { assignProfileImagesFromPublicFolder } from "@/lib/profileImagePool";
+import { getSiteOrigin } from "@/lib/siteUrl";
+
+export const dynamic = "force-dynamic";
 
 const area = goaAreas.find((a) => a.slug === "baga")!;
 
+const siteName = "Mahi Escorts Goa";
+const siteUrl = getSiteOrigin();
+const canonicalPath = "/areas/baga-escorts";
+const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
+
+/** Baga SERP: club lane + creek hotels — distinct from Calangute “Queen of Beaches” / hotel-out-call angle. */
+const metaTitle = `Baga Call Girls & Tito's Lane Nights | Creek Hotels · Verified · Cash on Meet | ${siteName}`;
+
+const metaDescription = `${siteName} coordinates Baga escorts for creek-side stays, Saunta Vaddo lanes, and beach-road resorts — WhatsApp quotes, verified profiles, pay in person after you meet (no advance UPI scams). North Goa party strip: clubs, water sports days, late returns.`;
+
 export const metadata: Metadata = {
-  title: `${area.name} Escorts | Call Girls in ${area.name} Goa`,
-  description: `Premium escorts and call girls in ${area.name}, Goa. ${area.description}. In-call & out-call. Book 24/7.`,
+  title: metaTitle,
+  description: metaDescription,
+  keywords: [
+    "Baga escorts",
+    "Baga call girls",
+    "escorts in Baga Goa",
+    "Tito's lane Baga escorts",
+    "Baga creek hotel escorts",
+    "Saunta Vaddo escorts",
+    "verified escorts Baga",
+    "no advance escorts Baga",
+    "cash on meet escorts North Goa",
+    "Baga beach hotel out-call",
+    "Russian escorts Baga",
+    "Calangute to Baga escorts",
+    "Baga nightlife call girls",
+    "North Goa party strip escorts",
+    "Baga Brittos beach escorts",
+    "Mambo's Baga escorts near",
+  ],
+  authors: [{ name: siteName }],
+  creator: siteName,
+  publisher: siteName,
+  alternates: {
+    canonical: canonicalPath,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: pageUrl,
+    siteName,
+    title: metaTitle,
+    description: metaDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: metaTitle,
+    description: metaDescription,
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "geo.region": "IN-GA",
+    "geo.placename": "Baga",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${pageUrl}#faqpage`,
+  mainEntity: BAGA_FAQ_JSON_LD_ENTITIES,
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteName,
+  url: siteUrl.replace(/\/$/, ""),
+  description: metaDescription,
+  areaServed: [
+    { "@type": "Place", name: "Goa, India" },
+    { "@type": "Place", name: "Baga, Goa" },
+    { "@type": "Place", name: "Calangute, Goa" },
+    { "@type": "Place", name: "Anjuna, Goa" },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: metaTitle,
+  description: metaDescription,
+  inLanguage: "en-IN",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": `${siteUrl.replace(/\/$/, "")}/#website`,
+    name: siteName,
+    url: siteUrl.replace(/\/$/, ""),
+  },
+  about: {
+    "@type": "Place",
+    name: "Baga",
+    description: area.description,
+    containedInPlace: {
+      "@type": "AdministrativeArea",
+      name: "North Goa, Bardez",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Goa",
+        containedInPlace: {
+          "@type": "Country",
+          name: "India",
+        },
+      },
+    },
+  },
+  primaryEntityOfPage: { "@id": `${pageUrl}#faqpage` },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: `${siteUrl.replace(/\/$/, "")}/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Areas",
+      item: `${siteUrl.replace(/\/$/, "")}/areas`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: `${area.name} escorts`,
+      item: pageUrl,
+    },
+  ],
 };
 
 export default function BagaAreaPage() {
+  const browseProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    profileSeeds,
+    "regular-profiles"
+  );
+  const featuredProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    featuredProfileSeeds,
+    "featured-profiles"
+  );
+  const russianProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    russianProfileSeeds,
+    "russian-profiles"
+  );
+
   return (
     <>
-      <Hero
-        title={`Call Girls in ${area.name} — Escorts ${area.name} Goa`}
-        subtitle={`${area.description}. Discreet in-call and out-call service. Book now.`}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <section className="mx-auto max-w-7xl px-4 py-8">
-        <p className="mx-auto max-w-2xl text-center text-zinc-600">
-          Browse our verified escorts available in {area.name}. We offer both in-call at our locations and
-          out-call to your hotel or residence in {area.name} and nearby areas.
-        </p>
-      </section>
-      <ProfileGrid
-        profiles={profiles}
-        title={`${area.name} Call Girls — Select Your Companion`}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <ContactBanner />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <HomePageSections
+        browseProfiles={browseProfiles}
+        featuredProfiles={featuredProfiles}
+        russianProfiles={russianProfiles}
+        areaPage={{ name: area.name, description: area.description }}
+        marketingCopy={BAGA_MARKETING}
+      />
     </>
   );
 }
-

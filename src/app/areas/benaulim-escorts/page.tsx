@@ -1,36 +1,198 @@
 import type { Metadata } from "next";
-import Hero from "@/components/Hero";
-import ProfileGrid from "@/components/ProfileGrid";
-import ContactBanner from "@/components/ContactBanner";
+import HomePageSections from "@/components/site/HomePageSections";
+import {
+  BENAULIM_FAQ_JSON_LD_ENTITIES,
+  BENAULIM_MARKETING,
+} from "@/data/areaPageCopy/benaulim";
 import { goaAreas } from "@/data/goaAreas";
-import { profiles } from "@/data/profiles";
+import {
+  featuredProfileSeeds,
+  profileSeeds,
+  russianProfileSeeds,
+  type Profile,
+} from "@/data/profiles";
+import { assignProfileImagesFromPublicFolder } from "@/lib/profileImagePool";
+import { getSiteOrigin } from "@/lib/siteUrl";
+
+export const dynamic = "force-dynamic";
 
 const area = goaAreas.find((a) => a.slug === "benaulim")!;
 
+const siteName = "Mahi Escorts Goa";
+const siteUrl = getSiteOrigin();
+const canonicalPath = "/areas/benaulim-escorts";
+const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
+
+const metaTitle = `Benaulim Escorts — Village Beach & Salcete Out-Call | Cash on Meet | ${siteName}`;
+
+const metaDescription = `${siteName} books Benaulim escorts for beach-side resorts, village lanes, and Colva–Varca belt timing — WhatsApp quotes, verified photos, pay when you meet, no UPI advance. Quiet South Goa evenings without bait-and-switch noise.`;
+
 export const metadata: Metadata = {
-  title: `${area.name} Escorts | Call Girls in ${area.name} Goa`,
-  description: `Premium escorts and call girls in ${area.name}, Goa. ${area.description}. In-call & out-call. Book 24/7.`,
+  title: metaTitle,
+  description: metaDescription,
+  keywords: [
+    "Benaulim escorts",
+    "call girls Benaulim",
+    "escorts in Benaulim Goa",
+    "Benaulim Beach escorts",
+    "Benaulim village escorts",
+    "Salcete escorts Benaulim",
+    "South Goa escorts Benaulim",
+    "out-call Benaulim resort",
+    "Colva to Benaulim escorts",
+    "Varca near Benaulim call girls",
+    "Russian escorts Benaulim",
+    "no advance escorts Benaulim",
+    "cash payment escorts Goa",
+    "verified Benaulim escorts",
+    "discreet WhatsApp escorts Benaulim",
+    "Maria Hall Benaulim escorts area",
+  ],
+  authors: [{ name: siteName }],
+  creator: siteName,
+  publisher: siteName,
+  alternates: {
+    canonical: canonicalPath,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: pageUrl,
+    siteName,
+    title: metaTitle,
+    description: metaDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: metaTitle,
+    description: metaDescription,
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "geo.region": "IN-GA",
+    "geo.placename": "Benaulim",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${pageUrl}#faqpage`,
+  mainEntity: BENAULIM_FAQ_JSON_LD_ENTITIES,
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteName,
+  url: siteUrl.replace(/\/$/, ""),
+  description: metaDescription,
+  areaServed: [
+    { "@type": "Place", name: "Goa, India" },
+    { "@type": "Place", name: "Benaulim, Salcete" },
+    { "@type": "Place", name: "Benaulim Beach, South Goa" },
+    { "@type": "Place", name: "South Goa, Salcete" },
+  ],
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: metaTitle,
+  description: metaDescription,
+  inLanguage: "en-IN",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": `${siteUrl.replace(/\/$/, "")}/#website`,
+    name: siteName,
+    url: siteUrl.replace(/\/$/, ""),
+  },
+  about: {
+    "@type": "Place",
+    name: "Benaulim",
+    description: area.description,
+    containedInPlace: {
+      "@type": "AdministrativeArea",
+      name: "Salcete, South Goa",
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Goa",
+        containedInPlace: {
+          "@type": "Country",
+          name: "India",
+        },
+      },
+    },
+  },
+  primaryEntityOfPage: { "@id": `${pageUrl}#faqpage` },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: `${siteUrl.replace(/\/$/, "")}/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Areas",
+      item: `${siteUrl.replace(/\/$/, "")}/areas`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: `${area.name} escorts`,
+      item: pageUrl,
+    },
+  ],
 };
 
 export default function BenaulimAreaPage() {
+  const browseProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    profileSeeds,
+    "regular-profiles"
+  );
+  const featuredProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    featuredProfileSeeds,
+    "featured-profiles"
+  );
+  const russianProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    russianProfileSeeds,
+    "russian-profiles"
+  );
+
   return (
     <>
-      <Hero
-        title={`Call Girls in ${area.name} — Escorts ${area.name} Goa`}
-        subtitle={`${area.description}. Discreet in-call and out-call service. Book now.`}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <section className="mx-auto max-w-7xl px-4 py-8">
-        <p className="mx-auto max-w-2xl text-center text-zinc-600">
-          Browse our verified escorts available in {area.name}. We offer both in-call at our locations and
-          out-call to your hotel or residence in {area.name} and nearby areas.
-        </p>
-      </section>
-      <ProfileGrid
-        profiles={profiles}
-        title={`${area.name} Call Girls — Select Your Companion`}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <ContactBanner />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <HomePageSections
+        browseProfiles={browseProfiles}
+        featuredProfiles={featuredProfiles}
+        russianProfiles={russianProfiles}
+        areaPage={{ name: area.name, description: area.description }}
+        marketingCopy={BENAULIM_MARKETING}
+      />
     </>
   );
 }
-

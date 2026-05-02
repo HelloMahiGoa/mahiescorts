@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HomePageSections from "@/components/site/HomePageSections";
-import { CALANGUTE_FAQ_JSON_LD_ENTITIES, CALANGUTE_MARKETING } from "@/data/areaPageCopy/calangute";
+import { MORJIM_FAQ_JSON_LD_ENTITIES, MORJIM_MARKETING } from "@/data/areaPageCopy/morjim";
 import { goaAreas } from "@/data/goaAreas";
 import {
   featuredProfileSeeds,
@@ -13,38 +13,37 @@ import { getSiteOrigin } from "@/lib/siteUrl";
 
 export const dynamic = "force-dynamic";
 
-const area = goaAreas.find((a) => a.slug === "calangute")!;
+const area = goaAreas.find((a) => a.slug === "morjim")!;
 
 const siteName = "Mahi Escorts Goa";
 const siteUrl = getSiteOrigin();
-const canonicalPath = "/areas/calangute-escorts";
+const canonicalPath = "/areas/morjim-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-/** Calangute-specific SERP: strip + hotels + trust — wording diverges from Panjim/capital pages. */
-const metaTitle = `Calangute Call Girls & Hotel Out-Call | Queen of Beaches | Verified · No Advance | ${siteName}`;
+const metaTitle = `Morjim Escorts — Chapora Estuary & Quiet Sand | Cash on Meet | ${siteName}`;
 
-const metaDescription = `${siteName} books Calangute escorts for beach-road resorts, Candolim-shoulder hotels, and Baga-side nights — WhatsApp quotes, in-person verified profiles, cash when you meet (no UPI “security” scams). North Goa strip coverage with honest traffic ETAs.`;
+const metaDescription = `${siteName} books Morjim escorts for beach-road resorts, Chapora riverside stays, and Ashwem-merge timing — WhatsApp quotes, verified photos, pay when you meet, no UPI advance. North Goa evenings without bait-and-switch noise.`;
 
 export const metadata: Metadata = {
   title: metaTitle,
   description: metaDescription,
   keywords: [
-    "Calangute escorts",
-    "Calangute call girls",
-    "escorts in Calangute Goa",
-    "Queen of Beaches escorts",
-    "Calangute beach road escorts",
-    "hotel out-call Calangute",
-    "verified escorts Calangute",
-    "no advance escorts North Goa",
-    "cash on meet escorts Goa",
-    "Calangute Baga escorts",
-    "Candolim Calangute escorts",
-    "Russian escorts Calangute",
-    "St Alex Church Calangute escorts",
-    "North Goa nightlife escorts",
-    "Calangute resort call girls",
-    "Tito's lane Baga escorts near Calangute",
+    "Morjim escorts",
+    "call girls Morjim",
+    "escorts in Morjim Goa",
+    "Chapora river Morjim escorts",
+    "Morjim beach road escorts",
+    "Ashwem near Morjim call girls",
+    "Pernem Morjim escorts",
+    "North Goa escorts Morjim",
+    "Russian escorts Morjim",
+    "Turtle Beach Morjim escorts area",
+    "out-call Morjim resort",
+    "no advance escorts Morjim",
+    "cash payment escorts Goa",
+    "verified Morjim escorts",
+    "discreet WhatsApp escorts Morjim",
+    "Morjim Chapora riverside escorts",
   ],
   authors: [{ name: siteName }],
   creator: siteName,
@@ -68,7 +67,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   other: {
     "geo.region": "IN-GA",
-    "geo.placename": "Calangute",
+    "geo.placename": "Morjim",
   },
 };
 
@@ -76,7 +75,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": `${pageUrl}#faqpage`,
-  mainEntity: CALANGUTE_FAQ_JSON_LD_ENTITIES,
+  mainEntity: MORJIM_FAQ_JSON_LD_ENTITIES,
 };
 
 const organizationSchema = {
@@ -87,9 +86,9 @@ const organizationSchema = {
   description: metaDescription,
   areaServed: [
     { "@type": "Place", name: "Goa, India" },
-    { "@type": "Place", name: "Calangute, Goa" },
-    { "@type": "Place", name: "Candolim, Goa" },
-    { "@type": "Place", name: "Baga, Goa" },
+    { "@type": "Place", name: "Morjim, Goa" },
+    { "@type": "Place", name: "Ashwem, North Goa" },
+    { "@type": "Place", name: "Chapora riverside, Pernem" },
   ],
 };
 
@@ -109,11 +108,11 @@ const webPageSchema = {
   },
   about: {
     "@type": "Place",
-    name: "Calangute",
+    name: "Morjim",
     description: area.description,
     containedInPlace: {
       "@type": "AdministrativeArea",
-      name: "North Goa, Bardez",
+      name: "Pernem, North Goa",
       containedInPlace: {
         "@type": "AdministrativeArea",
         name: "Goa",
@@ -152,7 +151,7 @@ const breadcrumbSchema = {
   ],
 };
 
-export default function CalanguteAreaPage() {
+export default function MorjimAreaPage() {
   const browseProfiles: Profile[] = assignProfileImagesFromPublicFolder(
     profileSeeds,
     "regular-profiles"
@@ -189,7 +188,7 @@ export default function CalanguteAreaPage() {
         featuredProfiles={featuredProfiles}
         russianProfiles={russianProfiles}
         areaPage={{ name: area.name, description: area.description }}
-        marketingCopy={CALANGUTE_MARKETING}
+        marketingCopy={MORJIM_MARKETING}
       />
     </>
   );

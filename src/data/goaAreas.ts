@@ -9,6 +9,8 @@ export const goaAreas = [
   { slug: "colva", name: "Colva", description: "Long beach, South Goa" },
   { slug: "benaulim", name: "Benaulim", description: "Serene South Goa beach" },
   { slug: "arambol", name: "Arambol", description: "North Goa hippie beach" },
+  { slug: "morjim", name: "Morjim", description: "Chapora riverside, quiet beach & shacks" },
+  { slug: "palolem", name: "Palolem", description: "South Goa crescent beach, shacks & laid-back vibe" },
 ] as const;
 
 export type GoaAreaSlug = (typeof goaAreas)[number]["slug"];

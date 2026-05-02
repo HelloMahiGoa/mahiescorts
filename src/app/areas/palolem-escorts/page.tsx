@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HomePageSections from "@/components/site/HomePageSections";
-import { CALANGUTE_FAQ_JSON_LD_ENTITIES, CALANGUTE_MARKETING } from "@/data/areaPageCopy/calangute";
+import { PALOLEM_FAQ_JSON_LD_ENTITIES, PALOLEM_MARKETING } from "@/data/areaPageCopy/palolem";
 import { goaAreas } from "@/data/goaAreas";
 import {
   featuredProfileSeeds,
@@ -13,38 +13,36 @@ import { getSiteOrigin } from "@/lib/siteUrl";
 
 export const dynamic = "force-dynamic";
 
-const area = goaAreas.find((a) => a.slug === "calangute")!;
+const area = goaAreas.find((a) => a.slug === "palolem")!;
 
 const siteName = "Mahi Escorts Goa";
 const siteUrl = getSiteOrigin();
-const canonicalPath = "/areas/calangute-escorts";
+const canonicalPath = "/areas/palolem-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-/** Calangute-specific SERP: strip + hotels + trust — wording diverges from Panjim/capital pages. */
-const metaTitle = `Calangute Call Girls & Hotel Out-Call | Queen of Beaches | Verified · No Advance | ${siteName}`;
+const metaTitle = `Palolem Escorts — Canacona Crescent Bay & Hut Out-Call | Cash on Meet | ${siteName}`;
 
-const metaDescription = `${siteName} books Calangute escorts for beach-road resorts, Candolim-shoulder hotels, and Baga-side nights — WhatsApp quotes, in-person verified profiles, cash when you meet (no UPI “security” scams). North Goa strip coverage with honest traffic ETAs.`;
+const metaDescription = `${siteName} books Palolem escorts for the crescent arc, beach-road stays, Canacona town, and Agonda-belt hops when timing allows — WhatsApp quotes, verified photos, pay when you meet, no UPI advance. Far-south Goa without bait-and-switch noise.`;
 
 export const metadata: Metadata = {
   title: metaTitle,
   description: metaDescription,
   keywords: [
-    "Calangute escorts",
-    "Calangute call girls",
-    "escorts in Calangute Goa",
-    "Queen of Beaches escorts",
-    "Calangute beach road escorts",
-    "hotel out-call Calangute",
-    "verified escorts Calangute",
-    "no advance escorts North Goa",
-    "cash on meet escorts Goa",
-    "Calangute Baga escorts",
-    "Candolim Calangute escorts",
-    "Russian escorts Calangute",
-    "St Alex Church Calangute escorts",
-    "North Goa nightlife escorts",
-    "Calangute resort call girls",
-    "Tito's lane Baga escorts near Calangute",
+    "Palolem escorts",
+    "call girls Palolem",
+    "escorts in Palolem Goa",
+    "Canacona escorts Palolem",
+    "Palolem crescent beach escorts",
+    "Patnem near Palolem call girls",
+    "Agonda from Palolem escorts",
+    "South Goa escorts Palolem",
+    "Russian escorts Palolem",
+    "out-call Palolem beach hut",
+    "no advance escorts Palolem",
+    "cash payment escorts Goa",
+    "verified Palolem escorts",
+    "discreet WhatsApp escorts Palolem",
+    "Palolem north south bay escorts",
   ],
   authors: [{ name: siteName }],
   creator: siteName,
@@ -68,7 +66,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   other: {
     "geo.region": "IN-GA",
-    "geo.placename": "Calangute",
+    "geo.placename": "Palolem",
   },
 };
 
@@ -76,7 +74,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": `${pageUrl}#faqpage`,
-  mainEntity: CALANGUTE_FAQ_JSON_LD_ENTITIES,
+  mainEntity: PALOLEM_FAQ_JSON_LD_ENTITIES,
 };
 
 const organizationSchema = {
@@ -87,9 +85,9 @@ const organizationSchema = {
   description: metaDescription,
   areaServed: [
     { "@type": "Place", name: "Goa, India" },
-    { "@type": "Place", name: "Calangute, Goa" },
-    { "@type": "Place", name: "Candolim, Goa" },
-    { "@type": "Place", name: "Baga, Goa" },
+    { "@type": "Place", name: "Palolem, Canacona" },
+    { "@type": "Place", name: "Palolem Beach, South Goa" },
+    { "@type": "Place", name: "Canacona, South Goa" },
   ],
 };
 
@@ -109,11 +107,11 @@ const webPageSchema = {
   },
   about: {
     "@type": "Place",
-    name: "Calangute",
+    name: "Palolem",
     description: area.description,
     containedInPlace: {
       "@type": "AdministrativeArea",
-      name: "North Goa, Bardez",
+      name: "Canacona, South Goa",
       containedInPlace: {
         "@type": "AdministrativeArea",
         name: "Goa",
@@ -152,7 +150,7 @@ const breadcrumbSchema = {
   ],
 };
 
-export default function CalanguteAreaPage() {
+export default function PalolemAreaPage() {
   const browseProfiles: Profile[] = assignProfileImagesFromPublicFolder(
     profileSeeds,
     "regular-profiles"
@@ -189,7 +187,7 @@ export default function CalanguteAreaPage() {
         featuredProfiles={featuredProfiles}
         russianProfiles={russianProfiles}
         areaPage={{ name: area.name, description: area.description }}
-        marketingCopy={CALANGUTE_MARKETING}
+        marketingCopy={PALOLEM_MARKETING}
       />
     </>
   );

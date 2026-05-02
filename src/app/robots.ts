@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
+import { getSiteOrigin } from "@/lib/siteUrl";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ?? "https://mahiescorts.in";
+const BASE_URL = getSiteOrigin().replace(/\/+$/, "");
 
 export default function robots(): MetadataRoute.Robots {
   return {

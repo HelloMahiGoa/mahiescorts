@@ -5,8 +5,13 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import { getSiteOrigin } from "@/lib/siteUrl";
 
 const GA_ID = "G-562BFW4CQ9";
+
+/** Avoid loading gtag from googletagmanager.com in dev (DNS / ad-block noise). Set NEXT_PUBLIC_GA_FORCE=true to enable locally. */
+const loadGoogleAnalytics =
+  process.env.NODE_ENV === "production" || process.env.NEXT_PUBLIC_GA_FORCE === "true";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +30,7 @@ const handwriting = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://mahiescorts.in"),
+  metadataBase: new URL(getSiteOrigin()),
   verification: {
     google: "xQ4B4iGsVRx3Hc6-Jq7wOwKCANBU_9_Z4XG6_uH2X18",
   },
@@ -38,22 +43,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
+      {loadGoogleAnalytics ? (
+        <>
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_ID}');
           `,
-        }}
-      />
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
+            }}
+          />
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            strategy="afterInteractive"
+          />
+        </>
+      ) : null}
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${handwriting.variable} min-h-screen antialiased`}
         suppressHydrationWarning
