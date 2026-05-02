@@ -5,9 +5,16 @@ import ProfileCard from "@/components/ProfileCard";
 import Services from "@/components/Services";
 import HowToBook from "@/components/HowToBook";
 import ContactBanner from "@/components/ContactBanner";
-import { profiles } from "@/data/profiles";
-import type { Profile } from "@/data/profiles";
+import {
+  featuredProfileSeeds,
+  profileSeeds,
+  russianProfileSeeds,
+  type Profile,
+} from "@/data/profiles";
+import { assignProfileImagesFromPublicFolder } from "@/lib/profileImagePool";
 import Image from "next/image";
+
+export const dynamic = "force-dynamic";
 
 const siteName = "Mahi Escorts Goa";
 
@@ -69,30 +76,20 @@ const organizationSchema = {
   areaServed: [{ "@type": "Place", name: "Goa" }, { "@type": "Place", name: "Panjim" }, { "@type": "Place", name: "Calangute" }, { "@type": "Place", name: "Baga" }, { "@type": "Place", name: "Anjuna" }],
 };
 
-const russianProfiles: Profile[] = [
-  { name: "Anastasia", age: 22, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Escorts in Goa" },
-  { name: "Maria", age: 24, location: "Goa", image: "/images/demo-profile.avif", tag: "Goa Russian Escorts" },
-  { name: "Olga", age: 21, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Call Girls Goa" },
-  { name: "Elena", age: 23, location: "Goa", image: "/images/demo-profile.avif", tag: "Goa Russian Call Girls" },
-  { name: "Irina", age: 25, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Escorts Goa" },
-  { name: "Natalia", age: 20, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Escorts in Goa" },
-  { name: "Svetlana", age: 26, location: "Goa", image: "/images/demo-profile.avif", tag: "Goa Russian Escorts" },
-  { name: "Yulia", age: 19, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Call Girls Goa" },
-  { name: "Ekaterina", age: 27, location: "Goa", image: "/images/demo-profile.avif", tag: "Goa Russian Call Girls" },
-  { name: "Tatiana", age: 22, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Escorts Goa" },
-  { name: "Anna", age: 21, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Escorts in Goa" },
-  { name: "Victoria", age: 24, location: "Goa", image: "/images/demo-profile.avif", tag: "Goa Russian Escorts" },
-  { name: "Daria", age: 23, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Call Girls Goa" },
-  { name: "Polina", age: 20, location: "Goa", image: "/images/demo-profile.avif", tag: "Goa Russian Call Girls" },
-  { name: "Ksenia", age: 25, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Escorts Goa" },
-  { name: "Alina", age: 19, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Escorts in Goa" },
-  { name: "Alexandra", age: 26, location: "Goa", image: "/images/demo-profile.avif", tag: "Goa Russian Escorts" },
-  { name: "Kristina", age: 22, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Call Girls Goa" },
-  { name: "Valeria", age: 21, location: "Goa", image: "/images/demo-profile.avif", tag: "Goa Russian Call Girls" },
-  { name: "Marina", age: 24, location: "Goa", image: "/images/demo-profile.avif", tag: "Russian Escorts Goa" },
-];
-
 export default function Home() {
+  const browseProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    profileSeeds,
+    "regular-profiles"
+  );
+  const featuredProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    featuredProfileSeeds,
+    "featured-profiles"
+  );
+  const russianProfiles: Profile[] = assignProfileImagesFromPublicFolder(
+    russianProfileSeeds,
+    "russian-profiles"
+  );
+
   return (
     <>
       <script
@@ -270,7 +267,7 @@ export default function Home() {
         </div>
       </section>
       <ProfileGrid
-        profiles={profiles}
+        profiles={browseProfiles}
         label="Our Profiles"
         title="Meet Our Goa Escorts — Handpicked Profiles to Choose From"
         cardVariant="browse"
@@ -597,7 +594,7 @@ export default function Home() {
         </div>
       </section>
       <ProfileGrid
-        profiles={profiles.slice(0, 20)}
+        profiles={featuredProfiles}
         label="Featured"
         title="Featured Goa Call Girls"
         cardVariant="featured"
