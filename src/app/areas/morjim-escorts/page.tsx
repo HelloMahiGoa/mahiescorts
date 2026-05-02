@@ -20,9 +20,9 @@ const siteUrl = getSiteOrigin();
 const canonicalPath = "/areas/morjim-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-const metaTitle = `Morjim Escorts — Chapora Estuary & Quiet Sand | Cash on Meet | ${siteName}`;
+const metaTitle = `Morjim Escorts & Call Girls | No Advance | Chapora Estuary Sand`;
 
-const metaDescription = `${siteName} books Morjim escorts for beach-road resorts, Chapora riverside stays, and Ashwem-merge timing — WhatsApp quotes, verified photos, pay when you meet, no UPI advance. North Goa evenings without bait-and-switch noise.`;
+const metaDescription = `Book Morjim escorts / Morjim call girls / Morjim russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

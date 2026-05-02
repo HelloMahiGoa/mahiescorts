@@ -20,11 +20,9 @@ const siteUrl = getSiteOrigin();
 const canonicalPath = "/areas/panjim-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-/** SERP title: primary keywords first, then trust hooks, then brand. */
-const metaTitle = `Panjim Escorts: Real Girls | Pay After You Meet | No Advance | ${siteName}`;
+const metaTitle = `Panjim Escorts & Call Girls | No Advance | Goa Capital`;
 
-/** Meta description: expands the title; keep claims accurate and aligned with on-page copy. */
-const metaDescription = `Skip fake ads — ${siteName} is a genuine Goa escorts service built on in-person verification. Real Panjim call girls, pay when you meet, no advance payment, privacy-first WhatsApp booking across the capital.`;
+const metaDescription = `Book Panjim escorts / Panjim call girls / Panjim russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

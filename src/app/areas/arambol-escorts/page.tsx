@@ -20,9 +20,9 @@ const siteUrl = getSiteOrigin();
 const canonicalPath = "/areas/arambol-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-const metaTitle = `Arambol Escorts — Pernem Cliffs & Sweet Lake Belt | Cash on Meet | ${siteName}`;
+const metaTitle = `Arambol Escorts & Call Girls | No Advance | Pernem Far North`;
 
-const metaDescription = `${siteName} books Arambol escorts for main-beach stays, cliff paths, Sweet Lake shoulder, and Mandrem-fork timing — WhatsApp quotes, verified photos, pay when you meet, no UPI advance. Far-north Goa without bait-and-switch noise.`;
+const metaDescription = `Book Arambol escorts / Arambol call girls / Arambol russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

@@ -15,7 +15,7 @@ export const dynamic = "force-dynamic";
 const siteName = "Mahi Escorts Goa";
 const siteOrigin = getSiteOrigin().replace(/\/$/, "");
 const defaultDescription =
-  "Verified Goa escorts & call girls — Mahi Escorts Goa. WhatsApp booking, in-call & out-call, cash when you meet, no advance. Panjim, Calangute, Baga, Anjuna, Candolim, Vagator, Margao, Colva, Palolem & more.";
+  "Book Goa escorts / Goa call girls / Goa russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified";
 
 export const metadata: Metadata = {
   title: `Goa Escorts & Call Girls | No Advance | North & South Goa`,

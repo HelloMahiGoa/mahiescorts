@@ -20,10 +20,9 @@ const siteUrl = getSiteOrigin();
 const canonicalPath = "/areas/calangute-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-/** Calangute-specific SERP: strip + hotels + trust — wording diverges from Panjim/capital pages. */
-const metaTitle = `Calangute Call Girls & Hotel Out-Call | Queen of Beaches | Verified · No Advance | ${siteName}`;
+const metaTitle = `Calangute Escorts & Call Girls | No Advance | Queen of Beaches Belt`;
 
-const metaDescription = `${siteName} books Calangute escorts for beach-road resorts, Candolim-shoulder hotels, and Baga-side nights — WhatsApp quotes, in-person verified profiles, cash when you meet (no UPI “security” scams). North Goa strip coverage with honest traffic ETAs.`;
+const metaDescription = `Book Calangute escorts / Calangute call girls / Calangute russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

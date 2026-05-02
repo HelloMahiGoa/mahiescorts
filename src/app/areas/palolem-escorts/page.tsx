@@ -20,9 +20,9 @@ const siteUrl = getSiteOrigin();
 const canonicalPath = "/areas/palolem-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-const metaTitle = `Palolem Escorts — Canacona Crescent Bay & Hut Out-Call | Cash on Meet | ${siteName}`;
+const metaTitle = `Palolem Escorts & Call Girls | No Advance | Canacona Crescent Bay`;
 
-const metaDescription = `${siteName} books Palolem escorts for the crescent arc, beach-road stays, Canacona town, and Agonda-belt hops when timing allows — WhatsApp quotes, verified photos, pay when you meet, no UPI advance. Far-south Goa without bait-and-switch noise.`;
+const metaDescription = `Book Palolem escorts / Palolem call girls / Palolem russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

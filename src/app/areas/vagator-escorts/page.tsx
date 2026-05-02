@@ -21,9 +21,9 @@ const canonicalPath = "/areas/vagator-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
 /** Vagator SERP: Chapora cliffs / sunset belt — not Candolim resort-dinner or Baga lane positioning. */
-const metaTitle = `Vagator Cliff Escorts & Sunset Belt | Ozran · Little Vagator | ${siteName}`;
+const metaTitle = `Vagator Escorts & Call Girls | No Advance | Sunset Cliffs North Goa`;
 
-const metaDescription = `${siteName} books Vagator escorts for main cliff resorts, Ozran lanes, and Little Vagator stays — WhatsApp quotes, verified profiles, cash when you meet (no advance UPI scams). North Goa headland: golden-hour out-call, honest ETAs on steep access roads near Chapora.`;
+const metaDescription = `Book Vagator escorts / Vagator call girls / Vagator russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

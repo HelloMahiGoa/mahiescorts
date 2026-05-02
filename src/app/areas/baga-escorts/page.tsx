@@ -20,10 +20,9 @@ const siteUrl = getSiteOrigin();
 const canonicalPath = "/areas/baga-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-/** Baga SERP: club lane + creek hotels — distinct from Calangute “Queen of Beaches” / hotel-out-call angle. */
-const metaTitle = `Baga Call Girls & Tito's Lane Nights | Creek Hotels · Verified · Cash on Meet | ${siteName}`;
+const metaTitle = `Baga Escorts & Call Girls | No Advance | Creek & Club Strip`;
 
-const metaDescription = `${siteName} coordinates Baga escorts for creek-side stays, Saunta Vaddo lanes, and beach-road resorts — WhatsApp quotes, verified profiles, pay in person after you meet (no advance UPI scams). North Goa party strip: clubs, water sports days, late returns.`;
+const metaDescription = `Book Baga escorts / Baga call girls / Baga russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

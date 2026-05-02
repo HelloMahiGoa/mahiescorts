@@ -21,9 +21,9 @@ const canonicalPath = "/areas/colva-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
 /** Colva SERP: Salcete long beach / resort belt — not Madgaon city-hub or North Goa strip angles. */
-const metaTitle = `Colva Beach Escorts & Resort Out-Call | South Goa Long Sand · Verified | ${siteName}`;
+const metaTitle = `Colva Escorts & Call Girls | No Advance | Salcete Long Beach`;
 
-const metaDescription = `${siteName} books Colva escorts for beach-road resorts, village guesthouses, and the long Salcete sand belt — WhatsApp quotes, verified profiles, cash when you meet (no advance UPI scams). Honest ETAs toward Benaulim and Margao-coast hops.`;
+const metaDescription = `Book Colva escorts / Colva call girls / Colva russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

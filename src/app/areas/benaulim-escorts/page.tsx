@@ -23,9 +23,9 @@ const siteUrl = getSiteOrigin();
 const canonicalPath = "/areas/benaulim-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-const metaTitle = `Benaulim Escorts — Village Beach & Salcete Out-Call | Cash on Meet | ${siteName}`;
+const metaTitle = `Benaulim Escorts & Call Girls | No Advance | Village South Goa`;
 
-const metaDescription = `${siteName} books Benaulim escorts for beach-side resorts, village lanes, and Colva–Varca belt timing — WhatsApp quotes, verified photos, pay when you meet, no UPI advance. Quiet South Goa evenings without bait-and-switch noise.`;
+const metaDescription = `Book Benaulim escorts / Benaulim call girls / Benaulim russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

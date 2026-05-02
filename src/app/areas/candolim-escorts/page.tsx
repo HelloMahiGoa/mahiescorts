@@ -21,9 +21,9 @@ const canonicalPath = "/areas/candolim-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
 /** Candolim SERP: resort / Sinquerim-Aguada belt — not Calangute strip or Baga club-lane positioning. */
-const metaTitle = `Candolim Resort Escorts & Dinner Plus-Ones | Sinquerim · Aguada Belt | ${siteName}`;
+const metaTitle = `Candolim Escorts & Call Girls | No Advance | Aguada Road Resorts`;
 
-const metaDescription = `${siteName} books Candolim escorts for main beach resorts, Sinquerim villas, and Fort Aguada-road stays — WhatsApp quotes, verified profiles, cash when you meet (no advance UPI scams). Quieter North Goa coast: pool evenings, resort tables, honest Saturday ETAs past Calangute traffic.`;
+const metaDescription = `Book Candolim escorts / Candolim call girls / Candolim russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

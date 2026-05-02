@@ -20,10 +20,9 @@ const siteUrl = getSiteOrigin();
 const canonicalPath = "/areas/anjuna-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
-/** Anjuna SERP: flea market + guesthouse coast — not the same angle as Baga club lane or Calangute strip. */
-const metaTitle = `Anjuna Call Girls & Guesthouse Out-Call | Flea Market Coast · Verified | ${siteName}`;
+const metaTitle = `Anjuna Escorts & Call Girls | No Advance | Flea Market North Coast`;
 
-const metaDescription = `${siteName} books Anjuna escorts for main-beach lanes, Wednesday flea-market weeks, Ozran-side stays, and Starco-area guesthouses — WhatsApp quotes, verified profiles, cash when you meet (no advance UPI scams). Honest ETAs for narrow North Goa lanes.`;
+const metaDescription = `Book Anjuna escorts / Anjuna call girls / Anjuna russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,

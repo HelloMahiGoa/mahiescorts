@@ -21,9 +21,9 @@ const canonicalPath = "/areas/margao-escorts";
 const pageUrl = `${siteUrl.replace(/\/$/, "")}${canonicalPath}`;
 
 /** Margao SERP: Madgaon city hub / Salcete — not North Goa beach-strip positioning. */
-const metaTitle = `Margao Madgaon Hotel Escorts | South Goa Hub · Salcete · Verified | ${siteName}`;
+const metaTitle = `Margao Escorts & Call Girls | No Advance | South Goa City Hub`;
 
-const metaDescription = `${siteName} books Margao escorts for Madgaon city hotels, municipal market-belt stays, and Fatorda addresses — WhatsApp quotes, verified profiles, cash when you meet (no advance UPI scams). South Goa business and stopover nights with honest town ETAs.`;
+const metaDescription = `Book Margao escorts / Margao call girls / Margao russian escorts. WhatsApp booking, in-call & out-call, cash when you meet girl, no advance. All our girls are verified`;
 
 export const metadata: Metadata = {
   title: metaTitle,
