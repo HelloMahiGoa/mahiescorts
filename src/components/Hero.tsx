@@ -84,7 +84,7 @@ export default function Hero({
             {/* CTA Buttons with enhanced styling */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+910000000000"
+                href="tel:+919663059306"
                 className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden shadow-2xl shadow-rose-500/30 hover:shadow-rose-500/50 transition-all duration-300 hover:scale-105"
               >
                 {/* Animated background effect */}
@@ -95,7 +95,7 @@ export default function Hero({
               </a>
 
               <a
-                href="https://wa.me/0000000000"
+                href="https://wa.me/919663059306"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden shadow-2xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105"

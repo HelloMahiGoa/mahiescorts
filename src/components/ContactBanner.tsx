@@ -8,13 +8,13 @@ export default function ContactBanner() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href="tel:+910000000000"
+            href="tel:+919663059306"
             className="rounded-full bg-rose-600 px-6 py-3 font-semibold text-white transition hover:bg-rose-700"
           >
             Call Now
           </a>
           <a
-            href="https://wa.me/0000000000"
+            href="https://wa.me/919663059306"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border-2 border-green-600 bg-white px-6 py-3 font-semibold text-green-700 transition hover:bg-green-50"

@@ -322,14 +322,14 @@ export default function ServicesPage() {
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="tel:+910000000000"
+              href="tel:+919663059306"
               className="group relative inline-flex w-full items-center justify-center gap-3 bg-gradient-to-r from-rose-500 to-pink-500 px-8 py-4 text-base font-semibold text-white shadow-2xl shadow-rose-500/30 transition hover:scale-105 hover:shadow-rose-500/50 sm:w-auto sm:rounded-2xl"
             >
               <Phone className="h-5 w-5" />
               <span>Instant Call</span>
             </a>
             <a
-              href="https://wa.me/0000000000"
+              href="https://wa.me/919663059306"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex w-full items-center justify-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-500 px-8 py-4 text-base font-semibold text-white shadow-2xl shadow-emerald-500/30 transition hover:scale-105 hover:shadow-emerald-500/50 sm:w-auto sm:rounded-2xl"

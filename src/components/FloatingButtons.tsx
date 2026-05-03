@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronUp, MessageCircle } from "lucide-react";
 
-const WHATSAPP = "0000000000";
+const WHATSAPP = "919663059306";
 
 export default function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
